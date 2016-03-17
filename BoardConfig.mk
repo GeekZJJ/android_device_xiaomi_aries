@@ -62,6 +62,10 @@ BOARD_KERNEL_CMDLINE  := console=null androidboot.hardware=qcom ehci-hcd.park=3 
 TARGET_KERNEL_CONFIG := aries-perf-user_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
+#KERNEL_TOOLCHAIN := /home/geekzjj/toochain/bin
+#KERNEL_TOOLCHAIN_PREFIX := arm-cortex_a15-linux-gnueabihf-
+#TARGET_TOOLCHAIN_ROOT := /home/geekzjj/toochain
+#TARGET_TOOLS_PREFIX := $(TARGET_TOOLCHAIN_ROOT)/bin/arm-cortex_a15-linux-gnueabihf-
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -131,6 +135,9 @@ QCOM_MULTI_VOICE_SESSION_ENABLED := true
 
 # Camera
 COMMON_GLOBAL_CFLAGS       += -DQCOM_BSP -DCAMERA_VENDOR_L_COMPAT
+
+# CM Hardware
+BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw/
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
