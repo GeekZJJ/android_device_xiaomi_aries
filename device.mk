@@ -63,6 +63,21 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ramdisk/chargeonlymode:root/sbin/chargeonlymode
 
+#prebuilt apps
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/Calendar/Calendar.apk:system/app/Calendar/Calendar.apk \
+    $(LOCAL_PATH)/prebuilt/GooglePinYin/GooglePinYin.apk:system/app/GooglePinYin/GooglePinYin.apk \
+    $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/liben_data_bundle.so:system/app/GooglePinYin/lib/arm/liben_data_bundle.so \
+    $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/libgnustl_shared.so:system/app/GooglePinYin/lib/arm/libgnustl_shared.so \
+    $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/libhwr.so:system/app/GooglePinYin/lib/arm/libhwr.so \
+    $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/libhwrword.so:system/app/GooglePinYin/lib/arm/libhwrword.so \
+    $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/libhwrzhmodel.so:system/app/GooglePinYin/lib/arm/libhwrzhmodel.so \
+    $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/libjni_gesture_engine.so:system/app/GooglePinYin/lib/arm/libjni_gesture_engine.so \
+    $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/libjni_hmm_shared_engine.so:system/app/GooglePinYin/lib/arm/libjni_hmm_shared_engine.so \
+    $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/libpinyin_data_bundle.so:system/app/GooglePinYin/lib/arm/libpinyin_data_bundle.so \
+    $(LOCAL_PATH)/prebuilt/S2WPhoneCallDisabler/S2WPhoneCallDisabler-v1.1.apk:system/app/S2WPhoneCallDisabler/S2WPhoneCallDisabler-v1.1.apk \
+    $(LOCAL_PATH)/prebuilt/XperiaWeather/XperiaWeather.apk:system/app/XperiaWeather/XperiaWeather.apk
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.mdm_links.sh:system/etc/init.qcom.mdm_links.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
@@ -386,5 +401,6 @@ PRODUCT_COPY_FILES += \
 
 # This is the aries-specific audio package
 $(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)
+#$(call inherit-product, hardware/qcom/msm8960/msm8960.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)

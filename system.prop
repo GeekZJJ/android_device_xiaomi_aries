@@ -1,2 +1,5 @@
 rild.libpath=/system/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
+ro.cdma.home.operator.numeric=46003
+ro.telephony.default_cdma_sub=0
+persist.omh.enabled=true
