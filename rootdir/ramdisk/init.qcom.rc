@@ -235,6 +235,8 @@ on boot
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/sustain_load
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown system system /sys/kernel/msm_cpufreq_limit/cpufreq_limit
+    chmod 0660 /sys/kernel/msm_cpufreq_limit/cpufreq_limit
     chown system system /sys/class/leds/flashlight/brightness
     chmod 0666 /sys/class/leds/flashlight/brightness
     chown system system /sys/class/leds/led:red/brightness
@@ -833,10 +835,16 @@ service dpmd /system/bin/dpmd
 on property:persist.sys.mdm.timeout_disable=1
     write /sys/module/mdm_common/parameters/disable_boot_timeout 1
 
+# Set performance profile
+   setprop sys.perf.profile 1
+   start thermald
+
+# CM Performance Profiles
+
 # Powersave
-on property:persist.sys.aries.power_profile=low
-    write /sys/kernel/msm_cpufreq_limit "702000"
+on property:sys.perf.profile=0
     start mpdecision
+    write /sys/kernel/msm_cpufreq_limit/cpufreq_limit 702000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "powersave"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "powersave"
@@ -844,10 +852,11 @@ on property:persist.sys.aries.power_profile=low
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy "conservative"
     write /sys/devices/system/cpu/sched_mc_power_savings 2
 
+
 # Balanced
-on property:persist.sys.aries.power_profile=middle
-    write /sys/kernel/msm_cpufreq_limit "1026000"
+on property:sys.perf.profile=1
     start mpdecision
+    write /sys/kernel/msm_cpufreq_limit/cpufreq_limit 1026000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
@@ -855,10 +864,11 @@ on property:persist.sys.aries.power_profile=middle
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy "msm"
     write /sys/devices/system/cpu/sched_mc_power_savings 1
 
+
 # Performance
-on property:persist.sys.aries.power_profile=high
-    write /sys/kernel/msm_cpufreq_limit "1728000"
+on property:sys.perf.profile=2
     stop mpdecision
+    write /sys/kernel/msm_cpufreq_limit/cpufreq_limit 1728000 
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -869,3 +879,4 @@ on property:persist.sys.aries.power_profile=high
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "performance"
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy "msm"
     write /sys/devices/system/cpu/sched_mc_power_savings 0
+
