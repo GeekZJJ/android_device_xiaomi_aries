@@ -61,7 +61,36 @@ PRODUCT_COPY_FILES += \
 
 # Charger
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/ramdisk/chargeonlymode:root/sbin/chargeonlymode
+    $(LOCAL_PATH)/rootdir/ramdisk/chargeonlymode:root/sbin/chargeonlymode \
+    $(LOCAL_PATH)/rootdir/ramdisk/charger_aries:root/sbin/charger_aries \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_00.png:root/res/images/charger/battery_00.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_01.png:root/res/images/charger/battery_01.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_02.png:root/res/images/charger/battery_02.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_03.png:root/res/images/charger/battery_03.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_04.png:root/res/images/charger/battery_04.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_05.png:root/res/images/charger/battery_05.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_06.png:root/res/images/charger/battery_06.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_07.png:root/res/images/charger/battery_07.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_08.png:root/res/images/charger/battery_08.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_09.png:root/res/images/charger/battery_09.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_10.png:root/res/images/charger/battery_10.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_11.png:root/res/images/charger/battery_11.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_12.png:root/res/images/charger/battery_12.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_13.png:root/res/images/charger/battery_13.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_14.png:root/res/images/charger/battery_14.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_15.png:root/res/images/charger/battery_15.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_16.png:root/res/images/charger/battery_16.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_17.png:root/res/images/charger/battery_17.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_18.png:root/res/images/charger/battery_18.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_19.png:root/res/images/charger/battery_19.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_20.png:root/res/images/charger/battery_20.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_21.png:root/res/images/charger/battery_21.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_22.png:root/res/images/charger/battery_22.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_23.png:root/res/images/charger/battery_23.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_24.png:root/res/images/charger/battery_24.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_25.png:root/res/images/charger/battery_25.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_charge.png:root/res/images/charger/battery_charge.png \
+    $(LOCAL_PATH)/rootdir/ramdisk/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png
 
 #prebuilt apps
 PRODUCT_COPY_FILES += \

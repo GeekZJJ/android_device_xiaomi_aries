@@ -62,10 +62,12 @@ BOARD_KERNEL_CMDLINE  := console=null androidboot.hardware=qcom ehci-hcd.park=3 
 TARGET_KERNEL_CONFIG := aries-perf-user_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
-#KERNEL_TOOLCHAIN := /home/geekzjj/toochain/bin
+
+# Toolchain
+#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-cortex_a15-linux-linaro-4.9/bin
 #KERNEL_TOOLCHAIN_PREFIX := arm-cortex_a15-linux-gnueabihf-
-#TARGET_TOOLCHAIN_ROOT := /home/geekzjj/toochain
-#TARGET_TOOLS_PREFIX := $(TARGET_TOOLCHAIN_ROOT)/bin/arm-cortex_a15-linux-gnueabihf-
+#TARGET_TOOLCHAIN_ROOT := prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9
+#TARGET_TOOLS_PREFIX := $(TARGET_TOOLCHAIN_ROOT)/bin/arm-linux-androideabi-
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -156,6 +158,7 @@ TARGET_RECOVERY_PIXEL_FORMAT     := "RGBX_8888"
 BOARD_HAS_NO_SELECT_BUTTON       := true
 
 TARGET_USERIMAGES_USE_EXT4         := true
+TARGET_USERIMAGES_USE_F2FS         := true
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x00A00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A00000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1073741824
@@ -188,6 +191,13 @@ MALLOC_IMPL := dlmalloc
 
 PRODUCT_BUILD_GMS := false
 TARGET_USES_LOGD := false
+
+# ART
+ART_BUILD_TARGET_NDEBUG := true
+ART_BUILD_HOST_NDEBUG := true
+
+# Release
+TARGET_BUILD_TYPE := release
 
 -include vendor/xiaomi/aries/BoardConfigVendor.mk
 
