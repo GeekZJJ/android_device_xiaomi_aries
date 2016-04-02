@@ -352,6 +352,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8960 \
     libemoji
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8960
+
 # Audio
 PRODUCT_PACKAGES += \
     audio_policy.msm8960 \
