@@ -95,6 +95,7 @@ PRODUCT_COPY_FILES += \
 #prebuilt apps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/Calendar/Calendar.apk:system/app/Calendar/Calendar.apk \
+    $(LOCAL_PATH)/prebuilt/MIUICamera/MIUICamera.apk:system/app/MIUICamera/MIUICamera.apk \
     $(LOCAL_PATH)/prebuilt/GooglePinYin/GooglePinYin.apk:system/app/GooglePinYin/GooglePinYin.apk \
     $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/liben_data_bundle.so:system/app/GooglePinYin/lib/arm/liben_data_bundle.so \
     $(LOCAL_PATH)/prebuilt/GooglePinYin/lib/arm/libgnustl_shared.so:system/app/GooglePinYin/lib/arm/libgnustl_shared.so \
