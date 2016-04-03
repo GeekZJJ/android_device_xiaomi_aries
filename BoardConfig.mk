@@ -61,13 +61,11 @@ BOARD_KERNEL_CMDLINE  := console=null androidboot.hardware=qcom ehci-hcd.park=3 
 #kernel
 TARGET_KERNEL_CONFIG := aries-perf-user_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
+#TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
 
 # Toolchain
-#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-cortex_a15-linux-linaro-4.9/bin
-#KERNEL_TOOLCHAIN_PREFIX := arm-cortex_a15-linux-gnueabihf-
-#TARGET_TOOLCHAIN_ROOT := prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9
-#TARGET_TOOLS_PREFIX := $(TARGET_TOOLCHAIN_ROOT)/bin/arm-linux-androideabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-cortex_a15-linux-linaro-4.9/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-cortex_a15-linux-gnueabihf-
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
