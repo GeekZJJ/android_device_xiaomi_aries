@@ -862,11 +862,11 @@ on property:sys.perf.profile=0
 # Balanced
 on property:sys.perf.profile=1
     start mpdecision
-    write /sys/kernel/msm_cpufreq_limit/cpufreq_limit 1026000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "ondemand"
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "ondemand"
+    write /sys/kernel/msm_cpufreq_limit/cpufreq_limit 1134000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "intelliactive"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "intelliactive"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "intelliactive"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "intelliactive"
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy "msm"
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk 200000000
     write /sys/devices/system/cpu/sched_mc_power_savings 1
